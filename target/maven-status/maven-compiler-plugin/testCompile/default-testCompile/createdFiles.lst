@@ -1,2 +1,12 @@
-drinkshop\service\StocServiceTest.class
-drinkshop\domain\ProductTest.class
+drinkshop\it\service\td\depthfirst\StocServiceIntTest.class
+drinkshop\ut\domain\ProductTest.class
+drinkshop\it\service\td\breadthfirst\StocServiceLevel1ValidatorIntTest.class
+drinkshop\it\service\td\breadthfirst\ProductServiceIntegrationStep2Test.class
+drinkshop\ut\service\StocServiceMockitoTest.class
+drinkshop\it\service\td\breadthfirst\ProductServiceIntegrationStep4Test.class
+drinkshop\it\service\td\breadthfirst\StocServiceLevel1RepoIntTest.class
+drinkshop\it\service\td\breadthfirst\StocServiceIntTest.class
+drinkshop\it\service\td\depthfirst\StocServiceLevel2StocIntTest.class
+drinkshop\it\service\td\breadthfirst\ProductServiceIntegrationStep3Test.class
+drinkshop\ut\service\ProductServiceTest.class
+drinkshop\it\service\td\depthfirst\StocServiceLevel1ValidatorIntTest.class
