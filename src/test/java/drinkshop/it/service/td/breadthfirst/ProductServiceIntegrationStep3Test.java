@@ -18,6 +18,8 @@ import java.nio.file.Path;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 class ProductServiceIntegrationStep3Test {
 
@@ -42,8 +44,13 @@ class ProductServiceIntegrationStep3Test {
 
     @Test
     void addProduct_valid_persistsToRepository() {
-        // setup: valid product
-        Product product = new Product(10, "Cappuccino", 14.0, CategorieBautura.MILK_COFFEE, TipBautura.DAIRY);
+        // setup: valid product (mock E)
+        Product product = mock(Product.class);
+        when(product.getId()).thenReturn(10);
+        when(product.getNume()).thenReturn("Cappuccino");
+        when(product.getPret()).thenReturn(14.0);
+        when(product.getCategorie()).thenReturn(CategorieBautura.MILK_COFFEE);
+        when(product.getTip()).thenReturn(TipBautura.DAIRY);
 
         // execution
         productService.addProduct(product);
@@ -55,8 +62,11 @@ class ProductServiceIntegrationStep3Test {
 
     @Test
     void addProduct_invalid_doesNotPersist() {
-        // setup: invalid product
-        Product product = new Product(-5, "", 0.0, CategorieBautura.JUICE, TipBautura.WATER_BASED);
+        // setup: invalid product (mock E)
+        Product product = mock(Product.class);
+        when(product.getId()).thenReturn(0);
+        when(product.getNume()).thenReturn("");
+        when(product.getPret()).thenReturn(0.0);
 
         // execution + assert
         assertThrows(ValidationException.class, () -> productService.addProduct(product));
